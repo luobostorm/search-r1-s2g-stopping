@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "search-r1-s2g-stopping"
+version = "0.1.0"
+description = "S2G-style trained stopping judge and evaluation for Search-R1"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Weimeng Luo", email = "weimengluo@gmail.com" },
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = [
+  "matplotlib>=3.7",
+  "pytest>=8",
+]
+model = [
+  "safetensors>=0.4",
+  "torch>=2.2",
+  "transformers>=5.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["kstar*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

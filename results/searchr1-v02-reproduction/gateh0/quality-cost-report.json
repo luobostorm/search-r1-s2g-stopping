@@ -1,0 +1,183 @@
+{
+  "analysis_status": "PASS",
+  "artifact_hashes": {
+    "decision_clarification": "5a23ad2cbc13aeed77b49b2263b8b5829b6abd69dfa20e4800777a9fb2715689",
+    "labels": "d86c58bc820d197e1b5e66bdf4eaa30f4871623e53658e5a1d9d7b8ab4533acd",
+    "labels_manifest": "f56d40c0d8c1c82945051419df032d03a8e71d85182236845d671c904dd0df91",
+    "metric_clarification": "a473d37a0dfb104d19f2cd183b050f39a8943a8828cac13c4982e3e9c16d26ab",
+    "native_comparison": "07a3fdae893883812ceaee44ee75916ceb8532169efe81eabd9cb851ea6875e1",
+    "run": "a9d30f7fca17031b50fc80218d9396c44a5b62c4bf6d3e271c6fa79a63d148a2",
+    "state_manifest": "44cf6f84a5defcaf97c172aa437634ff05361e3702492ed30422be8fc23837aa",
+    "structure_audit": "c0434288e3ee326bc18cc4f78122a8804e2a2fd2f6e35ef855e609ae561fd255",
+    "v1_protocol": "8dbe03fbd80e89d8d03586b619dd078a22c571cb0c2bb73189db4198ca51303b",
+    "v2_amendment": "61bfc40cc725c92fea3525b133553666c5fa268ef43ae817117913e0832309e5"
+  },
+  "bootstrap": {
+    "repeats": 10000,
+    "seed": 20260726,
+    "unit": "question"
+  },
+  "checks": {
+    "all_labels_have_targets": true,
+    "all_probes_are_answers": true,
+    "expected_counterfactual_state_count": true,
+    "expected_label_count": true,
+    "expected_native_comparison_count": true,
+    "expected_native_search_state_count": true,
+    "expected_native_state_count": true,
+    "expected_probe_count": true,
+    "expected_question_count": true,
+    "expected_state_count": true,
+    "final_test_labels_not_used": true,
+    "label_order_exact": true,
+    "labels_hash_matches_materialization": true,
+    "labels_materialization_count": true,
+    "native_em_recomputed_exact": true,
+    "native_order_exact": true,
+    "native_search_counts_match_manifest": true,
+    "one_run_end": true,
+    "one_run_start": true,
+    "probe_inference_declared_label_blind": true,
+    "prompt_hashes_exact": true,
+    "run_complete": true,
+    "state_probe_ids_exact": true,
+    "structure_audit_passed": true,
+    "unique_label_ids": true,
+    "unique_native_ids": true,
+    "unique_probe_ids": true,
+    "unique_state_ids": true,
+    "zero_probe_errors": true
+  },
+  "claim_boundary": {
+    "confirmatory": false,
+    "counterfactual_states_used_in_primary_metrics": false,
+    "dataset": "HotpotQA exploratory pilot 200",
+    "evidence_oracle": "UNAVAILABLE",
+    "final_test_labels_used": false,
+    "gold_correctness_seen_before_resource_decision_freeze": false,
+    "natural_native_behavior": false,
+    "resource_decision_rules_frozen_after_labelblind_probe_count": 318,
+    "same_model_answer_only_conditional_upper_bound": true,
+    "viewed_questions": 200
+  },
+  "counterfactual_supplement": {
+    "included_in_primary_metrics": false,
+    "mean_token_f1": 0.6431447245564893,
+    "native_oversearch_attribution_allowed": false,
+    "official_em_correct_state_count": 39,
+    "official_em_state_rate": 0.52,
+    "question_answerability_rate": 0.52,
+    "question_count": 75,
+    "questions_with_at_least_one_correct_state": 39,
+    "state_count": 75
+  },
+  "decision": "QUALITY_COST_PARETO",
+  "fixed_budget_curve": [
+    {
+      "budget_k": 0,
+      "exact_state_available_count": 200,
+      "exact_state_coverage": 1.0,
+      "last_reachable_imputed_count": 0,
+      "mean_search_calls": 0.0,
+      "official_em": 0.185,
+      "question_count": 200,
+      "selection_rule": "last_reachable",
+      "token_f1": 0.24264285714285716
+    },
+    {
+      "budget_k": 1,
+      "exact_state_available_count": 200,
+      "exact_state_coverage": 1.0,
+      "last_reachable_imputed_count": 0,
+      "mean_search_calls": 1.0,
+      "official_em": 0.34,
+      "question_count": 200,
+      "selection_rule": "last_reachable",
+      "token_f1": 0.45068650793650794
+    },
+    {
+      "budget_k": 2,
+      "exact_state_available_count": 186,
+      "exact_state_coverage": 0.93,
+      "last_reachable_imputed_count": 14,
+      "mean_search_calls": 1.93,
+      "official_em": 0.43,
+      "question_count": 200,
+      "selection_rule": "last_reachable",
+      "token_f1": 0.5509166666666667
+    },
+    {
+      "budget_k": 3,
+      "exact_state_available_count": 104,
+      "exact_state_coverage": 0.52,
+      "last_reachable_imputed_count": 96,
+      "mean_search_calls": 2.45,
+      "official_em": 0.46,
+      "question_count": 200,
+      "selection_rule": "last_reachable",
+      "token_f1": 0.5828214285714286
+    },
+    {
+      "budget_k": 4,
+      "exact_state_available_count": 33,
+      "exact_state_coverage": 0.165,
+      "last_reachable_imputed_count": 167,
+      "mean_search_calls": 2.615,
+      "official_em": 0.47,
+      "question_count": 200,
+      "selection_rule": "last_reachable",
+      "token_f1": 0.5994880952380952
+    }
+  ],
+  "metrics": {
+    "avoidable_search_fraction": 0.25047801147227533,
+    "avoidable_searches": 131,
+    "cost_oracle_mean_search_calls": 1.96,
+    "evidence_ready_search_rate": null,
+    "evidence_ready_search_rate_status": "UNAVAILABLE",
+    "forced_answer_coverage_em": 0.5,
+    "harmful_oversearch_rescue_questions": 10,
+    "native_em": 0.465,
+    "native_mean_search_calls": 2.615,
+    "quality_headroom": 0.04999999999999999,
+    "quality_headroom_pp": 4.999999999999999,
+    "quality_stop_oracle_em": 0.515,
+    "question_count": 200,
+    "questions_with_cost_only_oversearch": 60,
+    "questions_with_harmful_oversearch_state": 10,
+    "stop_now_answerable_search_question_count": 70,
+    "stop_now_answerable_search_question_rate": 0.35,
+    "stop_now_answerable_search_rate": 0.2734225621414914,
+    "stop_now_answerable_search_state_count": 143,
+    "stop_now_answerable_search_state_denominator": 523,
+    "terminal_only_answerer_rescue_questions": 3
+  },
+  "native_search_action_cells": {
+    "stop_correct_native_correct": 126,
+    "stop_correct_native_wrong": 17,
+    "stop_wrong_native_correct": 101,
+    "stop_wrong_native_wrong": 279
+  },
+  "native_search_question_cells": {
+    "has_stop_correct_native_correct": 60,
+    "has_stop_correct_native_wrong": 10,
+    "no_stop_correct_native_correct": 33,
+    "no_stop_correct_native_wrong": 97
+  },
+  "paired_bootstrap_95_ci": {
+    "avoidable_search_fraction": [
+      0.1947565543071161,
+      0.30902111324376197
+    ],
+    "mean_search_reduction": [
+      0.505,
+      0.81
+    ],
+    "quality_headroom": [
+      0.02,
+      0.08
+    ]
+  },
+  "schema_version": 1,
+  "stage": "Gate H0 v2 answer-only exploratory stop-headroom audit"
+}

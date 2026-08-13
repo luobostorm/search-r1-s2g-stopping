@@ -1,0 +1,131 @@
+{
+  "artifact_id": "searchr1-s2g-scaleup-aligned-eval-v1",
+  "artifact_type": "frozen experiment protocol",
+  "claim_status": "confirmatory after all gates and statistical amendment pass",
+  "frozen_date": "2026-07-27",
+  "status": "active_data_freeze_in_progress",
+  "external_alignment": {
+    "s2g_repository": "https://github.com/nianaaa/S2G-RAG",
+    "s2g_commit": "5d842a67a0a99a7b545bbad0dc402ceaae0e5eff",
+    "hotpotqa_configuration": "distractor",
+    "final_set_rule": "first 1000 unique original IDs in validation source order",
+    "alignment_label": "S2G-code-aligned HotpotQA-dev-1000"
+  },
+  "official_sources": {
+    "train": {
+      "filename": "hotpot_train_v1.1.json",
+      "expected_bytes": 566426227,
+      "expected_sha256": "26650cf50234ef5fb2e664ed70bbecdfd87815e6bffc257e068efea5cf7cd316",
+      "expected_rows": 90447
+    },
+    "validation": {
+      "filename": "hotpot_dev_distractor_v1.json",
+      "expected_bytes": 46320117,
+      "expected_sha256": "4e9ecb5c8d3b719f624d66b60f8d56bf227f03914f5f0753d6fa1b359d7104ea",
+      "expected_rows": 7405
+    }
+  },
+  "splits": {
+    "fresh_train_700": {
+      "count": 700,
+      "seed": "20260727-s2g-scaleup-fresh-train-700-v1"
+    },
+    "grouped_validation_100": {
+      "count": 100,
+      "seed": "20260727-s2g-scaleup-grouped-validation-100-v1"
+    },
+    "training_reserve_200": {
+      "count": 200,
+      "seed": "20260727-s2g-scaleup-training-reserve-200-v1",
+      "sealed": true
+    },
+    "s2g_code_aligned_hotpotqa_dev_1000": {
+      "count": 1000,
+      "selection": "source_order_first_unique_id"
+    }
+  },
+  "exclusions": {
+    "unit": "question",
+    "key_fields": [
+      "original_hotpot_id",
+      "normalized_question"
+    ],
+    "exclude_validation_from_training": true,
+    "exclude_prior_viewed_and_used_questions": true,
+    "require_zero_cross_split_overlap": true
+  },
+  "judge": {
+    "base_model": "Qwen3.5-2B",
+    "teacher_model": "Qwen3.6-35B-A3B",
+    "teacher_temperature": 0.0,
+    "teacher_thinking": false,
+    "teacher_max_new_tokens": 512,
+    "output_keys": [
+      "sufficient",
+      "gap_items"
+    ],
+    "forbidden_inputs": [
+      "gold_answer",
+      "future_query",
+      "future_document",
+      "future_action",
+      "answer_probe_correctness",
+      "official_em"
+    ]
+  },
+  "training": {
+    "objective": "full structured JSON token-level autoregressive NLL",
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "epochs": 3,
+    "learning_rate": 0.0001,
+    "max_length": 2048,
+    "gradient_accumulation": 8,
+    "checkpoint_selection_split": "grouped_validation_100"
+  },
+  "data_gate": {
+    "minimum_clean_train_snapshots": 2500,
+    "minimum_grouped_validation_snapshots": 280,
+    "minimum_unique_train_questions": 600,
+    "minimum_each_teacher_class_fraction": 0.35,
+    "minimum_each_turn_fraction": 0.1,
+    "minimum_schema_parse_rate": 0.98,
+    "maximum_question_overlap": 0,
+    "maximum_input_leakage": 0
+  },
+  "stop_truths": {
+    "teacher_sufficient": "teacher says the current context is sufficient",
+    "retrieval_complete": "current retrieved titles cover all gold supporting titles",
+    "safe_early_stop": "the current standardized answer is correct and Native Search-R1 would search again"
+  },
+  "primary_state_metrics": [
+    "safe_early_stop_precision",
+    "safe_early_stop_recall",
+    "safe_early_stop_average_precision",
+    "recall_at_matched_precision",
+    "premature_stop_rate",
+    "score_calibration"
+  ],
+  "question_metrics": [
+    "early_stop_opportunity_recall",
+    "first_safe_stop_delay",
+    "searches_saved",
+    "correct_to_wrong_count",
+    "wrong_to_correct_count"
+  ],
+  "system_hard_gates": [
+    "official_em_paired_noninferiority",
+    "mean_search_calls_reduction"
+  ],
+  "final_test_firewall": {
+    "must_freeze_before_scoring": [
+      "checkpoint",
+      "prompt",
+      "threshold",
+      "failure_fallback",
+      "statistical_amendment"
+    ],
+    "core200_is_development_only": true
+  }
+}

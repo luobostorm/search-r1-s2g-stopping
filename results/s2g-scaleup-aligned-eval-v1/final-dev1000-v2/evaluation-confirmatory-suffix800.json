@@ -1,0 +1,473 @@
+{
+  "analysis_role": "confirmatory_untouched_suffix800",
+  "bootstrap_seed": 20260728,
+  "eligible_state_count": 2081,
+  "interim_prefix_question_count": 200,
+  "masked_parse_failure_counts": {
+    "expanded_s2g_lora": 4,
+    "old_s2g_lora": 36,
+    "structured_base": 79
+  },
+  "native": {
+    "mean_search_calls": 2.60125,
+    "official_em": 0.44875,
+    "question_count": 800,
+    "token_f1": 0.5645182709447415
+  },
+  "paired_comparisons": {
+    "expanded_s2g_lora_minus_native": {
+      "native_correct_policy_wrong": 6,
+      "native_wrong_policy_correct": 1,
+      "official_em": {
+        "ci95_high": 0.0,
+        "ci95_low": -0.0125,
+        "estimate": -0.00625
+      },
+      "search_calls": {
+        "ci95_high": -0.07375,
+        "ci95_low": -0.12,
+        "estimate": -0.09625
+      }
+    },
+    "expanded_s2g_lora_minus_structured_base": {
+      "official_em": {
+        "ci95_high": 0.0,
+        "ci95_low": -0.0125,
+        "estimate": -0.00625
+      },
+      "search_calls": {
+        "ci95_high": -0.07375,
+        "ci95_low": -0.1175,
+        "estimate": -0.095
+      },
+      "stop_average_precision": {
+        "ci95_high": 0.07228246704725644,
+        "ci95_low": 0.005706307683218614,
+        "estimate": 0.03983471609150263
+      }
+    },
+    "old_s2g_lora_minus_native": {
+      "native_correct_policy_wrong": 0,
+      "native_wrong_policy_correct": 0,
+      "official_em": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "estimate": 0.0
+      },
+      "search_calls": {
+        "ci95_high": 0.0,
+        "ci95_low": -0.00375,
+        "estimate": -0.00125
+      }
+    },
+    "old_s2g_lora_minus_structured_base": {
+      "official_em": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "estimate": 0.0
+      },
+      "search_calls": {
+        "ci95_high": 0.00375,
+        "ci95_low": -0.00375,
+        "estimate": 0.0
+      },
+      "stop_average_precision": {
+        "ci95_high": 0.028523160954861848,
+        "ci95_low": -0.02318464717956309,
+        "estimate": 0.002209535101846294
+      }
+    },
+    "structured_base_minus_native": {
+      "native_correct_policy_wrong": 0,
+      "native_wrong_policy_correct": 0,
+      "official_em": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "estimate": 0.0
+      },
+      "search_calls": {
+        "ci95_high": 0.0,
+        "ci95_low": -0.00375,
+        "estimate": -0.00125
+      }
+    }
+  },
+  "positive_state_count": 523,
+  "question_count": 800,
+  "question_index_range": "200-999",
+  "schema_version": 1,
+  "score_policy": "parseable structured Judge rows retain raw margin; parsed=null rows use deterministic CONTINUE-only effective score",
+  "state_level": {
+    "expanded_s2g_lora": {
+      "calibration": {
+        "bins": [
+          {
+            "count": 1335,
+            "high": 0.1,
+            "low": 0.0,
+            "mean_probability": 0.007826523120802282,
+            "observed_rate": 0.2
+          },
+          {
+            "count": 48,
+            "high": 0.2,
+            "low": 0.1,
+            "mean_probability": 0.14099243168039335,
+            "observed_rate": 0.1875
+          },
+          {
+            "count": 37,
+            "high": 0.3,
+            "low": 0.2,
+            "mean_probability": 0.23950370603849,
+            "observed_rate": 0.1891891891891892
+          },
+          {
+            "count": 30,
+            "high": 0.4,
+            "low": 0.3,
+            "mean_probability": 0.35285510617297383,
+            "observed_rate": 0.23333333333333334
+          },
+          {
+            "count": 22,
+            "high": 0.5,
+            "low": 0.4,
+            "mean_probability": 0.4324099434046353,
+            "observed_rate": 0.2727272727272727
+          },
+          {
+            "count": 29,
+            "high": 0.6,
+            "low": 0.5,
+            "mean_probability": 0.539611052462233,
+            "observed_rate": 0.1724137931034483
+          },
+          {
+            "count": 29,
+            "high": 0.7,
+            "low": 0.6,
+            "mean_probability": 0.6461141883985463,
+            "observed_rate": 0.13793103448275862
+          },
+          {
+            "count": 34,
+            "high": 0.8,
+            "low": 0.7,
+            "mean_probability": 0.7471398544252872,
+            "observed_rate": 0.23529411764705882
+          },
+          {
+            "count": 39,
+            "high": 0.9,
+            "low": 0.8,
+            "mean_probability": 0.8586219838374473,
+            "observed_rate": 0.38461538461538464
+          },
+          {
+            "count": 478,
+            "high": 1.0,
+            "low": 0.9,
+            "mean_probability": 0.9867633121389113,
+            "observed_rate": 0.40794979079497906
+          }
+        ],
+        "brier": 0.29520920063930534,
+        "ece_10": 0.2910582275752368
+      },
+      "eligible_state_count": 2081,
+      "false_negative": 477,
+      "false_positive": 28,
+      "positive_state_count": 523,
+      "recall_at_precision_90": {
+        "achievable": true,
+        "minimum_precision": 0.9,
+        "precision": 1.0,
+        "recall": 0.0057361376673040155,
+        "threshold": 9.749999766703695
+      },
+      "recall_at_precision_95": {
+        "achievable": true,
+        "minimum_precision": 0.95,
+        "precision": 1.0,
+        "recall": 0.0057361376673040155,
+        "threshold": 9.749999766703695
+      },
+      "safe_early_stop_prevalence": 0.2513214800576646,
+      "stop_average_precision": 0.4035827102979433,
+      "stop_precision": 0.6216216216216216,
+      "stop_rate": 0.035559827006247,
+      "stop_recall": 0.08795411089866156,
+      "threshold": 7.874999982333975,
+      "true_negative": 1530,
+      "true_positive": 46,
+      "unsafe_stop_rate": 0.3783783783783784
+    },
+    "old_s2g_lora": {
+      "calibration": {
+        "bins": [
+          {
+            "count": 1247,
+            "high": 0.1,
+            "low": 0.0,
+            "mean_probability": 0.026248261810709703,
+            "observed_rate": 0.19486768243785085
+          },
+          {
+            "count": 155,
+            "high": 0.2,
+            "low": 0.1,
+            "mean_probability": 0.14171139654198012,
+            "observed_rate": 0.23870967741935484
+          },
+          {
+            "count": 131,
+            "high": 0.3,
+            "low": 0.2,
+            "mean_probability": 0.25096503326712233,
+            "observed_rate": 0.26717557251908397
+          },
+          {
+            "count": 59,
+            "high": 0.4,
+            "low": 0.3,
+            "mean_probability": 0.3504595228696926,
+            "observed_rate": 0.1694915254237288
+          },
+          {
+            "count": 82,
+            "high": 0.5,
+            "low": 0.4,
+            "mean_probability": 0.43947370878125863,
+            "observed_rate": 0.3170731707317073
+          },
+          {
+            "count": 89,
+            "high": 0.6,
+            "low": 0.5,
+            "mean_probability": 0.5449789065629874,
+            "observed_rate": 0.30337078651685395
+          },
+          {
+            "count": 52,
+            "high": 0.7,
+            "low": 0.6,
+            "mean_probability": 0.6504488183427058,
+            "observed_rate": 0.38461538461538464
+          },
+          {
+            "count": 81,
+            "high": 0.8,
+            "low": 0.7,
+            "mean_probability": 0.753833319262692,
+            "observed_rate": 0.49382716049382713
+          },
+          {
+            "count": 53,
+            "high": 0.9,
+            "low": 0.8,
+            "mean_probability": 0.856545677034126,
+            "observed_rate": 0.3584905660377358
+          },
+          {
+            "count": 132,
+            "high": 1.0,
+            "low": 0.9,
+            "mean_probability": 0.954625417150589,
+            "observed_rate": 0.5
+          }
+        ],
+        "brier": 0.22464208205115946,
+        "ece_10": 0.18785926175603612
+      },
+      "eligible_state_count": 2081,
+      "false_negative": 522,
+      "false_positive": 0,
+      "positive_state_count": 523,
+      "recall_at_precision_90": {
+        "achievable": true,
+        "minimum_precision": 0.9,
+        "precision": 1.0,
+        "recall": 0.0019120458891013384,
+        "threshold": 8.874999734107405
+      },
+      "recall_at_precision_95": {
+        "achievable": true,
+        "minimum_precision": 0.95,
+        "precision": 1.0,
+        "recall": 0.0019120458891013384,
+        "threshold": 8.874999734107405
+      },
+      "safe_early_stop_prevalence": 0.2513214800576646,
+      "stop_average_precision": 0.36595752930828696,
+      "stop_precision": 1.0,
+      "stop_rate": 0.0004805382027871216,
+      "stop_recall": 0.0019120458891013384,
+      "threshold": 8.000000061001629,
+      "true_negative": 1558,
+      "true_positive": 1,
+      "unsafe_stop_rate": 0.0
+    },
+    "structured_base": {
+      "calibration": {
+        "bins": [
+          {
+            "count": 1032,
+            "high": 0.1,
+            "low": 0.0,
+            "mean_probability": 0.016470154250152434,
+            "observed_rate": 0.19864341085271317
+          },
+          {
+            "count": 369,
+            "high": 0.2,
+            "low": 0.1,
+            "mean_probability": 0.1451057572678304,
+            "observed_rate": 0.21138211382113822
+          },
+          {
+            "count": 356,
+            "high": 0.3,
+            "low": 0.2,
+            "mean_probability": 0.24351156012228076,
+            "observed_rate": 0.2752808988764045
+          },
+          {
+            "count": 129,
+            "high": 0.4,
+            "low": 0.3,
+            "mean_probability": 0.34240709461799396,
+            "observed_rate": 0.3953488372093023
+          },
+          {
+            "count": 97,
+            "high": 0.5,
+            "low": 0.4,
+            "mean_probability": 0.4376616193752611,
+            "observed_rate": 0.4536082474226804
+          },
+          {
+            "count": 53,
+            "high": 0.6,
+            "low": 0.5,
+            "mean_probability": 0.5374459550077735,
+            "observed_rate": 0.5094339622641509
+          },
+          {
+            "count": 25,
+            "high": 0.7,
+            "low": 0.6,
+            "mean_probability": 0.6532807000508697,
+            "observed_rate": 0.44
+          },
+          {
+            "count": 13,
+            "high": 0.8,
+            "low": 0.7,
+            "mean_probability": 0.7226196677642682,
+            "observed_rate": 0.5384615384615384
+          },
+          {
+            "count": 5,
+            "high": 0.9,
+            "low": 0.8,
+            "mean_probability": 0.831325780251172,
+            "observed_rate": 0.2
+          },
+          {
+            "count": 2,
+            "high": 1.0,
+            "low": 0.9,
+            "mean_probability": 0.9222819424634414,
+            "observed_rate": 0.5
+          }
+        ],
+        "brier": 0.1991908738400503,
+        "ece_10": 0.11790334948446021
+      },
+      "eligible_state_count": 2081,
+      "false_negative": 523,
+      "false_positive": 1,
+      "positive_state_count": 523,
+      "recall_at_precision_90": {
+        "achievable": false,
+        "minimum_precision": 0.9,
+        "precision": null,
+        "recall": 0.0,
+        "threshold": null
+      },
+      "recall_at_precision_95": {
+        "achievable": false,
+        "minimum_precision": 0.95,
+        "precision": null,
+        "recall": 0.0,
+        "threshold": null
+      },
+      "safe_early_stop_prevalence": 0.2513214800576646,
+      "stop_average_precision": 0.36374799420644066,
+      "stop_precision": 0.0,
+      "stop_rate": 0.0004805382027871216,
+      "stop_recall": 0.0,
+      "threshold": 2.5,
+      "true_negative": 1557,
+      "true_positive": 0,
+      "unsafe_stop_rate": 1.0
+    }
+  },
+  "system_level": {
+    "expanded_s2g_lora": {
+      "accepted_risk": 0.391304347826087,
+      "correct_to_wrong_count": 6,
+      "early_stop_count": 69,
+      "early_stop_opportunity_recall": 0.14285714285714285,
+      "mean_first_safe_stop_delay_on_safe_stops": 0.8333333333333334,
+      "mean_search_calls": 2.505,
+      "mean_searches_saved": 0.09625,
+      "official_em": 0.4425,
+      "opportunity_question_count": 294,
+      "question_count": 800,
+      "safe_early_stop_count": 42,
+      "token_f1": 0.5592960487225193,
+      "unsafe_early_stop_count": 27,
+      "wrong_to_correct_count": 1
+    },
+    "old_s2g_lora": {
+      "accepted_risk": 0.0,
+      "correct_to_wrong_count": 0,
+      "early_stop_count": 1,
+      "early_stop_opportunity_recall": 0.003401360544217687,
+      "mean_first_safe_stop_delay_on_safe_stops": 0.0,
+      "mean_search_calls": 2.6,
+      "mean_searches_saved": 0.00125,
+      "official_em": 0.44875,
+      "opportunity_question_count": 294,
+      "question_count": 800,
+      "safe_early_stop_count": 1,
+      "token_f1": 0.5645182709447415,
+      "unsafe_early_stop_count": 0,
+      "wrong_to_correct_count": 0
+    },
+    "structured_base": {
+      "accepted_risk": 1.0,
+      "correct_to_wrong_count": 0,
+      "early_stop_count": 1,
+      "early_stop_opportunity_recall": 0.0,
+      "mean_first_safe_stop_delay_on_safe_stops": null,
+      "mean_search_calls": 2.6,
+      "mean_searches_saved": 0.00125,
+      "official_em": 0.44875,
+      "opportunity_question_count": 294,
+      "question_count": 800,
+      "safe_early_stop_count": 0,
+      "token_f1": 0.5645182709447415,
+      "unsafe_early_stop_count": 1,
+      "wrong_to_correct_count": 0
+    }
+  },
+  "thresholds": {
+    "expanded_s2g_lora": 7.874999982333975,
+    "old_s2g_lora": 8.000000061001629,
+    "structured_base": 2.5
+  },
+  "truth": "SAFE_EARLY_STOP = answer-only official EM correct on a Native state whose next action was SEARCH"
+}

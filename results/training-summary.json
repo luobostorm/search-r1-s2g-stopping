@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "artifact_id": "searchr1-s2g-scaleup-qwen35-2b-lora-run-v1-public-summary",
+  "status": "complete",
+  "base_model": "Qwen3.5-2B",
+  "teacher_model": "Qwen3.6-35B-A3B",
+  "natural_train_question_count": 900,
+  "natural_train_row_count": 3009,
+  "validation_question_count": 100,
+  "validation_row_count": 331,
+  "epochs": 3,
+  "selected_epoch": 1,
+  "checkpoint_selection_rule": "minimum_natural_validation_token_nll_tie_earliest",
+  "validation_token_nll_by_epoch": [
+    0.43380311652488945,
+    0.44222032754507273,
+    0.48910919693781824
+  ],
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "trainable_parameters": 16819200,
+  "total_parameters": 2230060864,
+  "frozen_adapter_hashes_sha256": "cfed584b95025cc4f1fd555cd2236b2773f1289c67dab03d26b2829659578767",
+  "weights_redistributed": false
+}

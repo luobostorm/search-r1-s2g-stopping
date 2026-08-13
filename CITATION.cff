@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the paper and this software."
+title: "Search-R1 × S2G Stopping"
+type: software
+authors:
+  - family-names: Luo
+    given-names: Weimeng
+    email: weimengluo@gmail.com
+repository-code: "https://github.com/luobostorm/search-r1-s2g-stopping"
+url: "https://github.com/luobostorm/search-r1-s2g-stopping"
+version: 0.1.0
+date-released: 2026-08-13
+abstract: >-
+  Public reproduction code and aggregate evidence for adapting and training an
+  S2G-style structured stopping judge for Search-R1.

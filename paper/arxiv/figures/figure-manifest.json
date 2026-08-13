@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "generator": "scripts/generate_s2g_paper_figures.py",
+  "generator_sha256": "6255cb3d6487eda8ebee8bdcc7e74fe1c9fd4f88c7db81fcbd1c7335ceb4ea8d",
+  "source_data": {
+    "h0": "results/searchr1-v02-reproduction/gateh0/quality-cost-report.json",
+    "h0_sha256": "5fc7b2e8bfecec180abb8fd2afcb6d7132c3a03d52fb8d474106353725954676",
+    "confirmatory": "results/s2g-scaleup-aligned-eval-v1/final-dev1000-v2/evaluation-confirmatory-suffix800.json",
+    "confirmatory_sha256": "ca73243d551c244bb02a2ccf124692b40289f2b0f1b3154c6568fd615d6b820d"
+  },
+  "figures": {
+    "framework": {
+      "pdf": "paper/arxiv/figures/stopping-evaluation-framework.pdf",
+      "pdf_sha256": "ec5cb539fe92960978cabdd784a40bfe6d1d56bc4f0a4b8bda74cdcf93b01a30",
+      "png": "paper/arxiv/figures/stopping-evaluation-framework.png",
+      "png_sha256": "9fe4f55261378538601ef26f7f12ea06827406cd0ee894e63b31698d9725b366"
+    },
+    "h0_headroom": {
+      "pdf": "paper/arxiv/figures/h0-stopping-headroom.pdf",
+      "pdf_sha256": "9c9d2d93b0794ed02e696332f113c46dc712055c3c7b4ef3a2f7ba6fc671526a",
+      "png": "paper/arxiv/figures/h0-stopping-headroom.png",
+      "png_sha256": "e6303498fc80957266e64ae7b42f6b076fd4f125270d167eafe31291bfa53bc4",
+      "derived_checks": {
+        "fixed_budget_points": 5,
+        "quality_headroom_pp": 4.999999999999999,
+        "avoidable_search_fraction_percent": 25.04780114722753,
+        "cost_oracle_reduction_ci_calls": [
+          0.505,
+          0.81
+        ]
+      }
+    },
+    "confirmatory_tradeoff": {
+      "pdf": "paper/arxiv/figures/confirmatory-quality-cost-risk.pdf",
+      "pdf_sha256": "33970abca8188ad57f7e764ac28c1fd142b7693d355575a54dc8862efbf78bd6",
+      "png": "paper/arxiv/figures/confirmatory-quality-cost-risk.png",
+      "png_sha256": "3c895e772b7acaf00b6794e097a5e354ab1051631c3937b2e4d674c156ba363b",
+      "derived_checks": {
+        "em_difference_pp": -0.625,
+        "search_difference": -0.09625,
+        "early_stop_total": 69,
+        "safe_plus_unsafe": 69,
+        "unsafe_fraction": 0.391304347826087
+      }
+    }
+  },
+  "claim_boundaries": [
+    "H0 is exploratory and supports identifiability/headroom only.",
+    "Suffix-800 supports retrieval reduction within the frozen EM non-inferiority margin.",
+    "The figures do not establish answer-quality superiority, safe stopping, or lower total compute cost."
+  ],
+  "figure_table_trace": [
+    {
+      "artifact": "stopping-evaluation-framework",
+      "source_data": [
+        "paper/多轮RAG何时停止-论文核心立意.md"
+      ],
+      "transformation": "Conceptual synthesis of the four evaluation layers; no quantitative inference.",
+      "caption_claim": "Stopping must be evaluated from reachable states through selected system outcomes.",
+      "supported_claims": [
+        "Defines the paper's trajectory-aware evaluation framework."
+      ],
+      "limitations": [
+        "Conceptual diagram; it is not an empirical result."
+      ]
+    },
+    {
+      "artifact": "h0-stopping-headroom",
+      "source_data": [
+        "results/searchr1-v02-reproduction/gateh0/quality-cost-report.json"
+      ],
+      "transformation": "Fixed-budget curve plus paired question-level bootstrap intervals read from the frozen H0 JSON.",
+      "caption_claim": "Exploratory evidence shows conditional stopping headroom and avoidable retrievals.",
+      "supported_claims": [
+        "Quality headroom is 5.00 pp.",
+        "Avoidable searches are 25.05%."
+      ],
+      "limitations": [
+        "Exploratory, conditional-oracle evidence; not a deployable policy result."
+      ]
+    },
+    {
+      "artifact": "confirmatory-quality-cost-risk",
+      "source_data": [
+        "results/s2g-scaleup-aligned-eval-v1/final-dev1000-v2/evaluation-confirmatory-suffix800.json"
+      ],
+      "transformation": "Paired suffix-800 differences with frozen confidence intervals and selected-stop counts.",
+      "caption_claim": "Expanded S2G reduces retrieval calls within the frozen EM non-inferiority bound, but unsafe selected stops remain.",
+      "supported_claims": [
+        "EM difference is -0.625 pp.",
+        "Search-call difference is -0.09625.",
+        "27 of 69 early stops are unsafe."
+      ],
+      "limitations": [
+        "Does not establish answer-quality superiority, safe stopping, or lower total compute cost."
+      ]
+    }
+  ]
+}
