@@ -15,8 +15,8 @@ S2G 机制实验和 suffix-800 确认性结果为核心。
 
 当前标题：
 
-- 中文：多轮 RAG 何时停止？候选可达性、策略风险与检索成本
-- 英文：When Should Multi-Round RAG Stop? Candidate Reachability, Policy Risk, and Retrieval Cost
+- 中文：多轮 RAG 何时停止？Search-R1 中的结构化停止判断与检索节省
+- 英文：When Should Multi-Round RAG Stop? Structured Stopping Judgments and Retrieval Reduction in Search-R1
 
 ## 主张边界
 

@@ -297,11 +297,11 @@ untouched suffix-800 上，将部分状态排序信号转化为平均 0.09625 �
 
 中文暂定：
 
-> 多轮 RAG 何时停止？候选可达性、风险—覆盖率与成本评测
+> 多轮 RAG 何时停止？Search-R1 中的结构化停止判断与检索节省
 
 英文暂定：
 
-> When Should Multi-Round RAG Stop? Candidate Reachability, Risk-Coverage, and Cost
+> When Should Multi-Round RAG Stop? Structured Stopping Judgments and Retrieval Reduction in Search-R1
 
 ## 10. 稿件处理原则
 

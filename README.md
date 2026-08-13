@@ -2,7 +2,7 @@
 
 Public reproduction package for:
 
-> **When Should Multi-Round RAG Stop? Candidate Reachability, Policy Risk, and Retrieval Cost**
+> **When Should Multi-Round RAG Stop? Structured Stopping Judgments and Retrieval Reduction in Search-R1**
 >
 > Weimeng Luo, Independent Researcher
 
